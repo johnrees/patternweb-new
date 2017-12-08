@@ -1,11 +1,13 @@
 import { Signal } from "micro-signals";
+import Graph from "../graph";
 import Node from "./node";
 
-class SignalGraph {
+class SignalGraph extends Graph {
   private signal;
   private nodes = {};
 
-  constructor(private components) {
+  constructor(protected components) {
+    super(components);
     this.signal = new Signal();
     this.nodes = {};
   }
